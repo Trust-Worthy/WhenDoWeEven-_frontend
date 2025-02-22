@@ -1,2 +1,2 @@
 # WhenDoWeEven
-Calendar Scheduling App
+Calendar Scheduling App - Frontend
