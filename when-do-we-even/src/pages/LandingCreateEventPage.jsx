@@ -1,98 +1,119 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import { TextField, Button, Select, MenuItem, InputLabel, FormControl } from '@mui/material';
+import './LandingCreateEventPage.css';
 
-const LandingPage = () => {
-  const [eventName, setEventName] = useState("");
-  const [date, setDate] = useState("");
-  const [timezone, setTimezone] = useState("America/New_York");
-  const [startTime, setStartTime] = useState("09:00");
-  const [endTime, setEndTime] = useState("17:00");
+const LandingCreateEventPage = () => {
+  const [eventName, setEventName] = useState('');
+  const [date, setDate] = useState('');
+  const [timezone, setTimezone] = useState('America/New_York');
+  const [startTime, setStartTime] = useState('09:00');
+  const [endTime, setEndTime] = useState('17:00');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [dateFieldType, setDateFieldType] = useState('text'); // Default to text for MM/DD/YYYY
 
   const handleSubmit = (e) => {
     e.preventDefault();
     alert(`Event Created: ${eventName} on ${date}, ${timezone} from ${startTime} to ${endTime}`);
   };
 
+  const handleLogin = (e) => {
+    e.preventDefault();
+    alert(`Logging in with Email: ${email}`);
+  };
+
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center px-6">
-      {/* Navbar */}
-      <nav className="w-full bg-gray-800 shadow-md py-4 flex justify-end pr-8">
-        <h1 className="text-3xl font-bold">Create Your Event</h1>
-      </nav>
-
-
-      {/* Centered Main Content */}
-      <div className="flex flex-col items-center justify-center w-full flex-1">
-        <div className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-lg text-center">
-          <form onSubmit={handleSubmit} className="space-y-6 text-center">
-            {/* Event Name */}
-            <div className="text-center">
-              <label className="block text-lg font-medium text-center">Event Name</label>
-              <input
-                type="text"
-                value={eventName}
-                onChange={(e) => setEventName(e.target.value)}
-                className="w-full p-3 border border-gray-600 rounded-lg mt-2 bg-gray-700 text-white text-center"
-                placeholder="Enter event name"
-                required
-              />
-            </div>
-
-            {/* Date Picker */}
-            <div className="text-center">
-              <label className="block text-lg font-medium text-center">Select Date</label>
-              <input
-                type="date"
-                value={date}
-                onChange={(e) => setDate(e.target.value)}
-                className="w-full p-3 border border-gray-600 rounded-lg mt-2 bg-gray-700 text-white text-center"
-                required
-              />
-            </div>
-
-            {/* Time Zone */}
-            <div className="text-center">
-              <label className="block text-lg font-medium text-center">Time Zone</label>
-              <select
-                value={timezone}
-                onChange={(e) => setTimezone(e.target.value)}
-                className="w-full p-3 border border-gray-600 rounded-lg mt-2 bg-gray-700 text-white text-center"
-              >
-                <option value="America/New_York">Eastern Time (ET)</option>
-                <option value="America/Chicago">Central Time (CT)</option>
-                <option value="America/Denver">Mountain Time (MT)</option>
-                <option value="America/Los_Angeles">Pacific Time (PT)</option>
-              </select>
-            </div>
-
+    <div className="landing-create-event-page">
+      <h1 className="title">WhenDoWeEven</h1>
+      <div className="card">
+        <div className="left-side">
+          <h2>Create Your Event</h2>
+          <form onSubmit={handleSubmit}>
+            <TextField 
+              label="Event Name" 
+              variant="outlined" 
+              fullWidth 
+              margin="normal" 
+              value={eventName} 
+              onChange={(e) => setEventName(e.target.value)} 
+              required 
+            />
+            
+            {/* Calendar Date Picker with MM/DD/YYYY inside the field */}
+            <TextField 
+              label="Event Date" 
+              variant="outlined" 
+              fullWidth 
+              margin="normal" 
+              value={date} 
+              onChange={(e) => setDate(e.target.value)} 
+              required 
+              type={dateFieldType} 
+              onFocus={() => setDateFieldType('date')} // Switch to date picker on focus
+              onBlur={(e) => {
+                if (!e.target.value) setDateFieldType('text'); // Reset to MM/DD/YYYY if empty
+              }}
+              placeholder="MM/DD/YYYY" // This works only when type="text"
+            />
+            
+            {/* Time Zone Selection */}
+            <FormControl fullWidth margin="normal">
+              <InputLabel shrink={true}>Timezone</InputLabel>
+              <Select value={timezone} onChange={(e) => setTimezone(e.target.value)}>
+                <MenuItem value="America/New_York">Eastern Time (ET)</MenuItem>
+                <MenuItem value="America/Chicago">Central Time (CT)</MenuItem>
+                <MenuItem value="America/Denver">Mountain Time (MT)</MenuItem>
+                <MenuItem value="America/Los_Angeles">Pacific Time (PT)</MenuItem>
+              </Select>
+            </FormControl>
+            
             {/* Working Hours */}
-            <div className="flex flex-col gap-4 text-center">
-              <div>
-                <label className="block text-lg font-medium text-center">Start Time</label>
-                <input
-                  type="time"
-                  value={startTime}
-                  onChange={(e) => setStartTime(e.target.value)}
-                  className="w-full p-3 border border-gray-600 rounded-lg mt-2 bg-gray-700 text-white text-center"
-                />
-              </div>
-              <div>
-                <label className="block text-lg font-medium text-center">End Time</label>
-                <input
-                  type="time"
-                  value={endTime}
-                  onChange={(e) => setEndTime(e.target.value)}
-                  className="w-full p-3 border border-gray-600 rounded-lg mt-2 bg-gray-700 text-white text-center"
-                />
-              </div>
-            </div>
-
-            {/* Submit Button */}
-            <button
-              type="submit"
-              className="w-full bg-blue-500 text-white py-3 rounded-lg text-lg font-medium hover:bg-blue-600 transition text-center"
-            >
-              Create Event
-            </button>
+            <TextField 
+              label="Start Time" 
+              type="time" 
+              variant="outlined" 
+              fullWidth 
+              margin="normal" 
+              value={startTime} 
+              onChange={(e) => setStartTime(e.target.value)} 
+            />
+            <TextField 
+              label="End Time" 
+              type="time" 
+              variant="outlined" 
+              fullWidth 
+              margin="normal" 
+              value={endTime} 
+              onChange={(e) => setEndTime(e.target.value)} 
+            />
+            
+            <Button type="submit" variant="contained" color="primary" fullWidth>Create Event</Button>
+          </form>
+        </div>
+        <div className="vertical-line"></div>
+        <div className="right-side">
+          <h2>Login</h2>
+          <form onSubmit={handleLogin}>
+            <TextField 
+              label="Email" 
+              variant="outlined" 
+              fullWidth 
+              margin="normal" 
+              value={email} 
+              onChange={(e) => setEmail(e.target.value)} 
+              required 
+            />
+            <TextField 
+              label="Password" 
+              type="password" 
+              variant="outlined" 
+              fullWidth 
+              margin="normal" 
+              value={password} 
+              onChange={(e) => setPassword(e.target.value)} 
+              required 
+            />
+            <Button type="submit" variant="contained" color="primary" fullWidth>Login</Button>
           </form>
         </div>
       </div>
@@ -100,4 +121,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default LandingCreateEventPage;
