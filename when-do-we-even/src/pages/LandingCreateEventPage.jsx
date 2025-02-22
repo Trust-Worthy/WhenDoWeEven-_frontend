@@ -14,17 +14,19 @@ const LandingPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center px-6">
-      <nav className="w-full bg-gray-800 shadow-md py-4 px-8 flex justify-center">
+      {/* Navbar */}
+      <nav className="w-full bg-gray-800 shadow-md py-4 flex justify-end pr-8">
         <h1 className="text-3xl font-bold">Create Your Event</h1>
       </nav>
 
-      {/* Main Container */}
-      <div className="flex items-center justify-center w-full min-h-[80vh]">
+
+      {/* Centered Main Content */}
+      <div className="flex flex-col items-center justify-center w-full flex-1">
         <div className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-lg text-center">
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6 text-center">
             {/* Event Name */}
-            <div>
-              <label className="block text-lg font-medium">Event Name</label>
+            <div className="text-center">
+              <label className="block text-lg font-medium text-center">Event Name</label>
               <input
                 type="text"
                 value={eventName}
@@ -36,8 +38,8 @@ const LandingPage = () => {
             </div>
 
             {/* Date Picker */}
-            <div>
-              <label className="block text-lg font-medium">Select Date</label>
+            <div className="text-center">
+              <label className="block text-lg font-medium text-center">Select Date</label>
               <input
                 type="date"
                 value={date}
@@ -48,8 +50,8 @@ const LandingPage = () => {
             </div>
 
             {/* Time Zone */}
-            <div>
-              <label className="block text-lg font-medium">Time Zone</label>
+            <div className="text-center">
+              <label className="block text-lg font-medium text-center">Time Zone</label>
               <select
                 value={timezone}
                 onChange={(e) => setTimezone(e.target.value)}
@@ -63,9 +65,9 @@ const LandingPage = () => {
             </div>
 
             {/* Working Hours */}
-            <div className="flex gap-4 justify-center">
+            <div className="flex flex-col gap-4 text-center">
               <div>
-                <label className="block text-lg font-medium">Start Time</label>
+                <label className="block text-lg font-medium text-center">Start Time</label>
                 <input
                   type="time"
                   value={startTime}
@@ -74,7 +76,7 @@ const LandingPage = () => {
                 />
               </div>
               <div>
-                <label className="block text-lg font-medium">End Time</label>
+                <label className="block text-lg font-medium text-center">End Time</label>
                 <input
                   type="time"
                   value={endTime}
@@ -87,7 +89,7 @@ const LandingPage = () => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-blue-500 text-white py-3 rounded-lg text-lg font-medium hover:bg-blue-600 transition"
+              className="w-full bg-blue-500 text-white py-3 rounded-lg text-lg font-medium hover:bg-blue-600 transition text-center"
             >
               Create Event
             </button>
