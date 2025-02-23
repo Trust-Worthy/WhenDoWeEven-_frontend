@@ -1,25 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Merriweather:wght@300;400;700&family=Cormorant+Garamond:wght@300;400;700&display=swap');
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
 
 /* Set a global font rule for most elements */
 body, html, 
 h1, h2, 
 input, textarea, select, button {
-  font-family: 'Merriweather', serif; /* Using the elegant font from our import */
-}
-/* Override input text styles */
-.MuiInputBase-input {
-  font-family: 'Merriweather', serif;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
-/* Override label styles */
+/* Label color override */
 .MuiInputLabel-root {
-  font-family: 'Merriweather', serif;
+  color: #4f4f4f !important;
 }
+
+/* Override for input text color in outlined TextFields */
+.MuiOutlinedInput-input {
+  color: white !important;
+}
+
+/* Label color when focused */
+.MuiInputLabel-root.Mui-focused {
+  color: #4f4f4f !important;
+}
+
+/* Input text color override */
+.MuiOutlinedInput-root {
+  color: #4f4f4f !important;
+}
+
+/* Outline border color override */
+.MuiOutlinedInput-notchedOutline {
+  border-color: #4f4f4f !important;
+}
+
+/* Placeholder color override (if needed) */
+.MuiInputBase-input::placeholder {
+  color: #4f4f4f !important;
+}
+
+/* Override for contained buttons */
+.MuiButton-contained {
+  background-color: #bb482e !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+  border-radius: 20px !important;
+  padding: 8px 12px !important;       /* Reduced padding */
+  font-size: 0.95em !important;       /* Reduced font size */
+  font-family: 'Nunito Sans', sans-serif !important;
+  letter-spacing: 0.5px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15) !important;
+  transition: background-color 0.3s ease-in-out !important;
+}
+
+.MuiButton-contained:hover {
+  background-color: #F2613F !important;
+  transform: scale(1.05);
+}
+
 /* Existing rules */
 body, html {
   height: 100%;
   margin: 0;
-  background-color: #F5EFE7;
+  background-color: #141416;
+}
+
+/* Limit the width of all form controls (TextFields, Selects, etc.) to 350px */
+.landing-create-event-page form .MuiFormControl-root {
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Limit the width of all form controls (TextFields, Selects, buttons, etc.) to 350px */
+.landing-create-event-page form .MuiFormControl-root,
+.landing-create-event-page form button {
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .landing-create-event-page {
@@ -27,25 +84,28 @@ body, html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   height: 100vh;
-  background-color: #F5EFE7; 
+  background-color: #141416; 
+  align-items: center;
 }
 
 .title {
   font-size: 2.8em;
   font-weight: 700;
-  font-family: 'Playfair Display', serif; /* Keeping title distinct if desired */
-  color: #997C70 !important; 
+  font-family: 'Nunito Sans', sans-serif;
+  color: #b4b4b4 !important; 
   text-align: center;
   margin-bottom: 20px;
   margin-left: 27%;
+  align-items: center;
 }
 
 h2 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Nunito Sans', sans-serif;
   font-size: 1.8em;
   font-weight: 700;
-  color: #585e54; 
+  color: #b4b4b4; 
 }
 
 .card {
@@ -53,11 +113,12 @@ h2 {
   width: 80%;
   max-width: 1200px; 
   height: 75%;
-  background-color: #D8C4B6; 
+  background-color: #1A1A1D; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  border-radius: 20px;
   overflow: hidden;
   margin-left: 25%;
+  align-items: center;
 }
 
 .left-side, .right-side {
@@ -71,29 +132,29 @@ h2 {
 }
 
 .vertical-line {
-  width: 1px;
+  width: 0.5px;
   height: 90%; 
-  background-color: #727D73;
+  background-color: #4f4f4f;
   align-self: center; 
 }
 
 button {
-  margin-top: 20px;
-  background-color: #213555 !important; /* Default button color */
-  color: white; 
+  margin-top: 30px;
+  background-color: #3edd77 !important; /* Default button color */
+  color: #b4b4b4 !important;            /* Button text color set to #b4b4b4 */
   border: none;
   padding: 12px 18px;
-  font-size: 1.1em;
-  font-family: 'Merriweather', serif; /* Ensure buttons use our imported font */
-  font-weight: 700;
+  font-size: 1.2em;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 1000; /* Bold text */
   letter-spacing: 0.5px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
-  border-radius: 6px;
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 100px;
+  box-shadow: 2px 4px 10px #fffefe26;
 }
 
 button:hover {
-  background-color: #3E5879 !important; /* Hover color */
+  background-color: #3edd77 !important;
   transform: scale(1.05);
 }

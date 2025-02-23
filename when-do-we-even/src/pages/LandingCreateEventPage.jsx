@@ -5,7 +5,6 @@ import './LandingCreateEventPage.css';
 const LandingCreateEventPage = () => {
   const [eventName, setEventName] = useState('');
   const [date, setDate] = useState('');
-  // In LandingCreateEventPage.jsx, update the timezone state initialization:
   const [timezone, setTimezone] = useState('');
   const [startTime, setStartTime] = useState('09:00');
   const [endTime, setEndTime] = useState('17:00');
@@ -92,7 +91,7 @@ const LandingCreateEventPage = () => {
               onChange={(e) => setEndTime(e.target.value)} 
             />
             
-            <Button type="submit" variant="contained" color="primary" fullWidth>Create Event</Button>
+            <Button type="submit" variant="contained" color="white" fullWidth>Create Event</Button>
           </form>
         </div>
         <div className="vertical-line"></div>
@@ -118,7 +117,7 @@ const LandingCreateEventPage = () => {
               onChange={(e) => setPassword(e.target.value)} 
               required 
             />
-            <Button type="submit" variant="contained" color="primary" fullWidth>Login</Button>
+            <Button type="submit" variant="contained" color="white" fullWidth>Login</Button>
           </form>
         </div>
       </div>
