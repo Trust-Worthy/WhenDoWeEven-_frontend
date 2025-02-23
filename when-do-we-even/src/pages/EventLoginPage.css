@@ -10,6 +10,10 @@
   display: flex;
 }
 
+.event-login-page form button {
+    color: #ffffff !important;
+}
+
 /* Split the page into two sections that span the full width and height */
 .split-page {
   display: flex;
@@ -23,7 +27,7 @@
 /* Left Section: Calendar */
 .left-section {
   flex: 1;
-  background-color: #27272a; /* slightly darker */
+  background-color: #141416; /* slightly darker */
   padding: 40px;
   box-sizing: border-box;
 }
@@ -31,7 +35,7 @@
 /* Right Section: Recommendations */
 .right-section {
   flex: 1;
-  background-color: #E4E5DB; /* lighter than the left */
+  background-color: #141416; /* lighter than the left */
   padding: 40px;
   box-sizing: border-box;
 }
@@ -39,14 +43,14 @@
 /* Typography for both sections */
 .typography {
     font-family: 'Nunito Sans', sans-serif;
-    color: #ffffff !important;
+    color: #b4b4b4 !important;
     text-align: center;
 }
 
 /* Typography for both sections */
 .typography1 {
     font-family: 'Nunito Sans', sans-serif;
-    color: #27272a !important;
+    color: #b4b4b4 !important;
     text-align: center;
 }
 
@@ -57,26 +61,24 @@
 }
 
 .calendar-view {
-  width: 100%;
-  padding: 20px;
-  background-color: #3B1C32;
-  text-align: center;
-  border-radius: 8px;
-}
-
-/* Recommendations section */
+    width: 100%;
+    padding: 20px;
+    background-color: #1A1A1D !important; /* Updated placeholder color */
+    text-align: center;
+    border-radius: 8px;
+  }
+  
 .recommendations-section {
-  margin-top: 20px;
-  background-color: #EAE2D8;
-  border-radius: 8px;
-  padding: 20px;
+margin-top: 20px;
+background-color: #1A1A1D !important; /* Already using #1A1A1D */
+border-radius: 8px;
+padding: 20px;
 }
 
 /* Button styles */
 button {
   margin-top: 20px;
-  background-color: #32012F !important;
-  color: white;
+  color: #ffffff !important;
   border: none;
   padding: 12px 18px;
   font-size: 1.1em;
@@ -89,11 +91,6 @@ button {
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-button:hover {
-  background-color: #3E5879 !important;
-  transform: scale(1.05);
-}
-
 .divider {
     display: flex;
     justify-content: center;
@@ -101,14 +98,14 @@ button:hover {
     position: relative;
     margin: 20px 0;
     font-family: 'Nunito Sans', sans-serif;
-    color: #27272a;
+    color: #4f4f4f;
 }
 
 .divider::before,
 .divider::after {
     content: "";
     flex: 1;
-    border-bottom: 1px solid #27272a;
+    border-bottom: 1px solid #4f4f4f;
     margin: 0 10px;
 }
 
@@ -116,4 +113,24 @@ button:hover {
     background: transparent;
     padding: 0 10px;
     font-weight: bold;
+}
+
+.recommendations-buttons button {
+    background-color: #15F5BA !important; /* Updated to the specified color */
+    color: #141416 !important; /* Keeping the text dark */
+    border: none;
+    padding: 12px 18px;
+    font-size: 1.1em;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    border-radius: 6px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px; /* Adds space below each button */
 }

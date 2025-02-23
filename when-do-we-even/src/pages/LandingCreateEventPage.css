@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 /* Set a global font rule for most elements */
 body, html, 
@@ -8,9 +9,62 @@ input, textarea, select, button {
   font-family: 'Nunito Sans', sans-serif;
 }
 
+.title-container {
+  display: flex;
+  flex-direction: column; /* Stack title and .ai-text vertically */
+  align-items: center; /* Center align */
+  text-align: center;
+  position: relative;
+}
+
+.title {
+  font-size: 2.8em;
+  font-weight: 700;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #b4b4b4 !important;
+  margin-bottom: -5px; /* Reduce gap between title and .ai-text */
+  margin-left: 350px;
+}
+
+.ai-text {
+  font-size: 2.4em;
+  font-family: 'Pacifico', cursive;
+  color: #b4b4b4;
+  margin-top: 15px; 
+  margin-left: 700px; 
+  position: absolute;
+  left: 10px;
+  color: #15F5BA;
+}
+
+/* Override for contained buttons */
+.MuiButton-contained {
+  background-color: #3edd77 !important;
+  color: #b4b4b4 !important; /* Set button text to #b4b4b4 */
+  font-weight: 1000 !important;
+  border-radius: 100px !important;
+  padding: 12px 18px !important;
+  font-size: 1.2em !important;
+  font-family: 'Nunito Sans', sans-serif !important;
+  letter-spacing: 0.5px;
+  box-shadow: 2px 4px 10px rgba(255, 255, 255, 0.15) !important;
+  transition: background-color 0.3s ease-in-out !important;
+}
+
+/* Increase top margin for buttons inside the card */
+.landing-create-event-page form button {
+  margin-top: 10px !important;
+  color: #ffffff !important;
+}
+
 /* Label color override */
 .MuiInputLabel-root {
   color: #4f4f4f !important;
+}
+
+/* Align the Select's displayed value to the left */
+.MuiSelect-select {
+  text-align: left !important;
 }
 
 /* Override for input text color in outlined TextFields */
@@ -52,11 +106,6 @@ input, textarea, select, button {
   transition: background-color 0.3s ease-in-out !important;
 }
 
-.MuiButton-contained:hover {
-  background-color: #F2613F !important;
-  transform: scale(1.05);
-}
-
 /* Existing rules */
 body, html {
   height: 100%;
@@ -90,17 +139,6 @@ body, html {
   align-items: center;
 }
 
-.title {
-  font-size: 2.8em;
-  font-weight: 700;
-  font-family: 'Nunito Sans', sans-serif;
-  color: #b4b4b4 !important; 
-  text-align: center;
-  margin-bottom: 20px;
-  margin-left: 27%;
-  align-items: center;
-}
-
 h2 {
   font-family: 'Nunito Sans', sans-serif;
   font-size: 1.8em;
@@ -110,12 +148,12 @@ h2 {
 
 .card {
   display: flex;
-  width: 80%;
+  width: 90%;
   max-width: 1200px; 
   height: 75%;
   background-color: #1A1A1D; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
+  border-radius: 30px;
   overflow: hidden;
   margin-left: 25%;
   align-items: center;
@@ -152,9 +190,4 @@ button {
   transition: background-color 0.3s ease-in-out;
   border-radius: 100px;
   box-shadow: 2px 4px 10px #fffefe26;
-}
-
-button:hover {
-  background-color: #3edd77 !important;
-  transform: scale(1.05);
 }

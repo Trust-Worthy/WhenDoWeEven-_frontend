@@ -24,10 +24,13 @@ const LandingCreateEventPage = () => {
 
   return (
     <div className="landing-create-event-page">
-      <h1 className="title">WhenDoWeEven</h1>
+      <div className="title-container">
+        <h1 className="title">WhenDoWeEven</h1>
+        <span className="ai-text">.ai</span>
+    </div>
       <div className="card">
         <div className="left-side">
-          <h2>Create Your Event</h2>
+          <h2>Create your event</h2>
           <form onSubmit={handleSubmit}>
             <TextField 
               label="Event Name" 
@@ -96,7 +99,7 @@ const LandingCreateEventPage = () => {
         </div>
         <div className="vertical-line"></div>
         <div className="right-side">
-          <h2>Login</h2>
+          <h2>Log in to your account</h2>
           <form onSubmit={handleLogin}>
             <TextField 
               label="Email" 

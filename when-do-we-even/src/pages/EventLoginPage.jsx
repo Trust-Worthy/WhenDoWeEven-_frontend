@@ -18,6 +18,16 @@ const EventLoginPage = () => {
     setRecommendations([]);
   };
 
+  // Mock suggestions to display when there are no recommendations
+  const mockSuggestions = [
+    { day: "Monday", time: "10:00 AM" },
+    { day: "Wednesday", time: "2:00 PM" },
+    { day: "Friday", time: "4:00 PM" },
+  ];
+
+  // Use recommendations if available; otherwise, fallback to mockSuggestions.
+  const suggestionsToShow = recommendations.length === 0 ? mockSuggestions : recommendations;
+
   return (
     <div className="event-login-page">
       <div className="split-page">
@@ -38,16 +48,16 @@ const EventLoginPage = () => {
                 onChange={handleFileUpload}
             />
             <label htmlFor="upload-calendar">
-            <Button
+                <Button
                 variant="contained"
                 component="span"
                 sx={{
-                backgroundColor: '#3B1C32',
-                '&:hover': { backgroundColor: '#3B1C32' },
+                    backgroundColor: '#3B1C32',
+                    color: '#ffffff', // Force white text
                 }}
-            >
-                Upload Calendar (.ics)
-            </Button>
+                >
+                Upload Calendar
+                </Button>
             </label>
             {/* Divider with "or" */}
             <div className="divider">
@@ -58,7 +68,7 @@ const EventLoginPage = () => {
                 component="span"
                 sx={{
                 backgroundColor: '#3B1C32',
-                '&:hover': { backgroundColor: '#3B1C32' },
+                color: '#ffffff', // Force white text
                 }}
             >
                 Make changes in calendar
@@ -68,31 +78,33 @@ const EventLoginPage = () => {
         </div>
         {/* Right Section: Recommendations */}
         <div className="right-section">
-        <Typography variant="h3" className="typography1" align="center" gutterBottom>
+          <Typography variant="h3" className="typography1" align="center" gutterBottom>
             Recommendations
-        </Typography>
-        <Paper elevation={3} className="recommendations-section">
-            {recommendations.length === 0 ? (
-            <Typography
-                variant="body1"
-                className="typography"
-                align="center"
-                style={{ padding: '20px', color: '#3B1C32' }}
-            >
-            </Typography>
-            ) : (
-            recommendations.map((rec, index) => (
-                <Typography
+          </Typography>
+          <Paper elevation={3} className="recommendations-section">
+            {/* Container for horizontal layout */}
+            <div className="recommendations-buttons">
+            {suggestionsToShow.map((suggestion, index) => (
+                <Button
                 key={index}
-                variant="body1"
-                className="typography"
-                style={{ padding: '10px' }}
+                variant="contained"
+                sx={{
+                    backgroundColor: '#96E9C6',  // Updated to #96E9C6
+                    color: 'white',
+                    fontSize: '1.3em',
+                    fontWeight: 700,
+                    borderRadius: '50px',
+                    padding: '16px 24px',
+                    textTransform: 'none',
+                }}
                 >
-                {rec}
-                </Typography>
-            ))
-            )}
-        </Paper>
+                {suggestion.day
+                    ? `${suggestion.day} - ${suggestion.time}`
+                    : suggestion}
+                </Button>
+            ))}
+        </div>
+          </Paper>
         </div>
       </div>
     </div>
