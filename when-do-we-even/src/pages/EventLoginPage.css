@@ -12,10 +12,12 @@
 
 .calendar-view .MuiButton-contained {
   color: #ffffff !important;
+  letter-spacing: 0.7px;
 }
 
 .recommendations-section .MuiButton-contained {
   color: #4f4f4f !important;
+  letter-spacing: 0.7px;
 }
 
 
@@ -146,7 +148,7 @@ button {
   font-size: 1.3em; /* Increased font-size for scaling up */
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.7px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out, transform 0.2s;
   border-radius: 8px;
@@ -159,5 +161,5 @@ button {
 }
 
 .recommendations-buttons button:hover {
-  transform: scale(1.6);
+  transform: scale(1.3);
 }

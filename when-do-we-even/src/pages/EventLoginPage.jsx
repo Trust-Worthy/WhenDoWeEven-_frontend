@@ -20,9 +20,9 @@ const EventLoginPage = () => {
 
   // Mock suggestions to display when there are no recommendations
   const mockSuggestions = [
-    { day: "Monday", time: "10:00 AM" },
-    { day: "Wednesday", time: "2:00 PM" },
-    { day: "Friday", time: "4:00 PM" },
+    { day: "Monday", time: "10:00 AM-12:00 PM" },
+    { day: "Wednesday", time: "2:00 PM-3:00 PM" },
+    { day: "Friday", time: "4:00 PM-5:30 PM" },
   ];
 
   // Use recommendations if available; otherwise, fallback to mockSuggestions.
