@@ -65,6 +65,11 @@ h2 {
   padding: 20px;
 }
 
+.left-side h2,
+.right-side h2 {
+  text-align: center;
+}
+
 .vertical-line {
   width: 1px;
   height: 90%; 

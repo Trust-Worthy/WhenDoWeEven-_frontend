@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Merriweather:wght@300;400;700&family=Cormorant+Garamond:wght@300;400;700&display=swap');
+
+.event-login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F5EFE7;
+  padding: 40px;
+  min-height: 100vh;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  color: #8B7153;
+}
+
+.calendar-container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 20px 0;
+}
+
+.calendar-view {
+  width: 100%;
+  padding: 20px;
+  background-color: #D8C4B6;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.recommendations-section {
+  width: 80%;
+  max-width: 1200px;
+  margin: 20px 0;
+  background-color: #D8C4B6;
+  border-radius: 8px;
+  padding: 20px;
+}

@@ -5,7 +5,8 @@ import './LandingCreateEventPage.css';
 const LandingCreateEventPage = () => {
   const [eventName, setEventName] = useState('');
   const [date, setDate] = useState('');
-  const [timezone, setTimezone] = useState('America/New_York');
+  // In LandingCreateEventPage.jsx, update the timezone state initialization:
+  const [timezone, setTimezone] = useState('');
   const [startTime, setStartTime] = useState('09:00');
   const [endTime, setEndTime] = useState('17:00');
   const [email, setEmail] = useState('');
@@ -57,13 +58,17 @@ const LandingCreateEventPage = () => {
             />
             
             {/* Time Zone Selection */}
-            <FormControl fullWidth margin="normal">
-              <InputLabel shrink={true}>Timezone</InputLabel>
-              <Select value={timezone} onChange={(e) => setTimezone(e.target.value)}>
-                <MenuItem value="America/New_York">Eastern Time (ET)</MenuItem>
-                <MenuItem value="America/Chicago">Central Time (CT)</MenuItem>
-                <MenuItem value="America/Denver">Mountain Time (MT)</MenuItem>
-                <MenuItem value="America/Los_Angeles">Pacific Time (PT)</MenuItem>
+            <FormControl fullWidth margin="normal" variant="outlined">
+              <InputLabel>Timezone</InputLabel>
+              <Select
+                value={timezone}
+                onChange={(e) => setTimezone(e.target.value)}
+                label="Timezone"
+              >
+                <MenuItem value="Eastern Time (ET)">Eastern Time (ET)</MenuItem>
+                <MenuItem value="Central Time (CT)">Central Time (CT)</MenuItem>
+                <MenuItem value="Mountain Time (MT)">Mountain Time (MT)</MenuItem>
+                <MenuItem value="Pacific Time (PT)">Pacific Time (PT)</MenuItem>
               </Select>
             </FormControl>
             
