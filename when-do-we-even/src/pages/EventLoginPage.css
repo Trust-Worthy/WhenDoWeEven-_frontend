@@ -10,6 +10,23 @@
   display: flex;
 }
 
+.calendar-view .MuiButton-contained {
+  color: #ffffff !important;
+}
+
+.recommendations-section .MuiButton-contained {
+  color: #4f4f4f !important;
+}
+
+
+/* Ensure buttons stay white in light mode */
+@media (prefers-color-scheme: light) {
+  button, .upload-calendar-button, .make-changes-button {
+    background-color: #F2613F !important; /* Keep button background color */
+    color: #FFFFFF !important; /* Ensure text remains white */
+  }
+}
+
 .event-login-page form button {
     color: #ffffff !important;
 }
@@ -115,22 +132,32 @@ button {
     font-weight: bold;
 }
 
+.recommendations-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the buttons horizontally */
+}
+
 .recommendations-buttons button {
-    background-color: #15F5BA !important; /* Updated to the specified color */
-    color: #141416 !important; /* Keeping the text dark */
-    border: none;
-    padding: 12px 18px;
-    font-size: 1.1em;
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-    border-radius: 6px;
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 24px; /* Adds space below each button */
+  background-color: #15F5BA !important; /* Updated to the specified color */
+  color: #141416 !important; /* Keeping the text dark */
+  border: none;
+  padding: 16px 24px; /* Slightly increased padding */
+  font-size: 1.3em; /* Increased font-size for scaling up */
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s;
+  border-radius: 8px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px; /* Adds space below each button */
+}
+
+.recommendations-buttons button:hover {
+  transform: scale(1.6);
 }

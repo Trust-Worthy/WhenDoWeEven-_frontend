@@ -32,9 +32,6 @@ a {
   text-decoration: inherit;
   font-family: 'Nunito Sans', sans-serif;
 }
-/* a:hover {
-  color: #535bf2;
-} */
 
 body {
   margin: 0;
@@ -56,37 +53,30 @@ h1 {
 
 /* Button styling */
 button {
-  border-radius: 30px;
-  border: 1px solid transparent;
-  padding: 0.8em 1.5em;
-  font-size: 1.1em;
-  font-weight: 700;
-  font-family: 'Nunito Sans', sans-serif; /* Use Nunito Sans */
-  background-color: #F2613F !important; /* Updated button color */
-  color: #000000 !important; /* Set button text to a dark color */
+  margin-top: 30px;
+  background-color: #F2613F !important; /* Button background */
+  color: #FFFFFF !important; /* Set button text to white */
+  border: none;
+  padding: 12px 18px;
+  font-size: 1.2em;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 1000; /* Bold text */
+  letter-spacing: 0.5px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 100px;
+  box-shadow: 2px 4px 10px rgba(255, 255, 255, 0.15);
 }
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-  border-radius: 30px;
-}
-
+/* Ensure buttons stay white in light mode */
 @media (prefers-color-scheme: light) {
-  :root {
-    color: #727D73;
-    background-color: #ffffff;
-    border-radius: 30px;
-  }
-  a:hover {
-    color: #747bff;
-  }
   button {
-    background-color: #F2613F; /* Updated button color for light mode */
-    color: white; /* Text color for contrast */
+    background-color: #F2613F !important; /* Keep button background color */
+    color: #FFFFFF !important; /* Ensure text remains white */
     border-radius: 100px;
   }
+}
+
+.calendar-view button {
+  color: #ffffff !important;
 }

@@ -47,7 +47,7 @@ input, textarea, select, button {
   font-size: 1.2em !important;
   font-family: 'Nunito Sans', sans-serif !important;
   letter-spacing: 0.5px;
-  box-shadow: 2px 4px 10px rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 2px 4px 10px #ffffff26 !important;
   transition: background-color 0.3s ease-in-out !important;
 }
 
